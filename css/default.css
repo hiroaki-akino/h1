@@ -1,0 +1,198 @@
+/* 作成：秋野 */
+
+/* ---------- 全ファイル共有のスタイルシート ---------- */
+
+body{
+	background-color: oldlace;
+	text-align: center;
+}
+body > header{
+	margin-bottom: 50px;
+	padding: 1px 20px;
+}
+body > header > h1{
+	text-align: left;
+}
+body > header > p{
+	text-align: right;
+}
+body > header > a{
+	float: right;
+}
+body > header::after{
+	content: "";
+	margin-bottom: 20px;
+	display: block;
+	clear: both;
+}
+body > footer{
+	margin-top: 100px;
+	padding: 10px 20px;
+	background-color: #5ab4bd;
+	color: white;
+	text-align: center;
+}
+main{
+	width: 90%;
+	margin: auto;
+}
+h2{
+	text-align:left;
+}
+h2::after {
+	content: "";
+	display: block;
+	height: 4px;
+	width: 350px;
+	background: -webkit-linear-gradient(to right, aqua, transparent);
+	background: linear-gradient(to right, aqua, transparent);
+}
+table{
+	width: 100%;
+}
+caption > p{
+	font-size: 20px;
+	font-style: italic;
+}
+span{
+	font-size: 10px;
+}
+#err{
+	font-size: 18px;
+	color: red;
+}
+/* 主にform.phpで使う */
+.err{
+	border:solid 3px red;
+}
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="email"],
+input[type="number"]{
+	height: 25px;
+	font-size: 14px;
+	/* width:100%; */
+	/* border:outset 0.5px;
+	box-shadow: 2px 2px 3px gray; */
+}
+input[type="text"]:hover,
+input[type="password"]:hover,
+input[type="date"]:hover,
+input[type="email"]:hover,
+input[type="number"]:hover{
+	background-color:lightpink;
+}
+input[type="submit"],
+input[type="button"]{
+	margin: 20px auto 0px;
+	height: 45px;
+	width: 50%;
+	border-radius: 20px;
+	box-shadow: 4px 4px 6px gray;
+	background-color: paleturquoise;
+	font-size: 20px;
+	transition: all 0.8s ease;
+	
+}
+input[type="submit"]:hover,
+input[type="button"]:hover{
+	border: 2px solid blue;
+	background:none;
+	background-color:blue;
+	font-size: 30px;
+	font-style: normal;
+	font-weight: bold;
+	color: white;
+	text-decoration-line: none;
+	opacity: 0.7;
+	transition: all 0.5s ease;
+}
+.disabled{
+	pointer-events: none;
+}
+select{
+	font-size: 14px;
+	border:1px;
+}
+
+/* ---------- main.phpのスタイルシート ---------- */
+
+/* ----- main.php(共通) ----- */
+
+/* メニュータブ */
+.tabs {
+    /* padding-bottom: 40px; */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    /* height: 1550px; */
+    scroll-snap-align: start;
+}
+
+.tab_item {
+    width: 0px ; /* main.php のJSで可変的に変更 */
+    /* height: 50px; */
+    /* border-bottom: 3px solid #ffffff;	使うか検討中 */
+    background-color: #ffffff;
+    line-height: 50px ;
+    font-size: 18px;
+    text-align: center;
+    /* vertical-align: middle; */
+    color: black;
+    display: block;
+    float: left;
+    font-weight: nomal;
+    transition: all 0.2s ease;
+}
+.tab_item:hover {	
+    background-color: yellow;
+    opacity: 0.5;
+    color: red;
+    font-weight: bold;
+    /*color: olive;	使うか検討中　秋野*/
+    /*border-bottom: 3px solid #5ab4bd;　同上*/
+}
+input[name="tab"] {
+    display: none;
+}
+.tab_contents {
+	/* height: 100%; */
+    display: none;
+    padding: 40px 40px 0 40px  ;
+    clear: both;
+    overflow: hidden;
+    padding-bottom: 40px;
+}
+#tab_radio0:checked ~ #tab1,
+#tab_radio1:checked ~ #tab2,
+#tab_radio2:checked ~ #tab3,
+#tab_radio3:checked ~ #tab4,
+#tab_radio4:checked ~ #tab5,
+#tab_radio5:checked ~ #tab6,
+#tab_radio6:checked ~ #tab7,
+#tab_radio7:checked ~ #tab8{
+    border: solid #5ab4bd;
+    display: block;
+    padding-bottom: 40px;
+    /* height: 1460px; */
+    scroll-snap-type: y mandatory;
+}
+.tabs input:checked + .tab_item {
+    background-color: #5ab4bd;
+    font-size: 18px;
+    font-weight: bold;
+	color: #fff;
+	
+}
+
+/* ----- main.php(tab2) ----- */
+
+/* ランキングの王冠 */
+i.rank0{
+	color: gold;
+}
+i.rank1{
+	color: silver;
+}
+i.rank2{
+	color: #7A592F;
+}

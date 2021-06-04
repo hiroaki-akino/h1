@@ -1,0 +1,90 @@
+#test2{
+  display:none;
+}
+
+#test2:not(:target){
+  display:none;
+}
+
+#test2:target{
+  display:block;
+  color: aqua;
+}
+
+#test::after{
+  content: '（これはHTML本文には記載されない追加文字）' ;
+}
+#test{
+  background-color: skyblue;
+}
+
+
+/*タブ切り替え全体のスタイル*/
+.tabs {
+  /*padding-bottom: 40px;		/*内容欄下部に余白を設ける*/
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 100%;/*全体の幅の設定*/
+}
+
+/*タブのスタイル*/
+.tab_item {
+  width: calc(100%/3);	/*タブ幅を全体の1/3に設定*/
+  height: 50px;		/*タブを全体の1/3に設定*/
+  border-bottom: 3px solid #ffffff;		/*タブ全体にボーダーラインを設定*/
+  background-color: #ffffff;	/*選択されていないタブの背景色を設定*/
+  line-height: 50px ;	/*タブ内文字の行間を設定*/
+  font-size: 18px;		/*タブ内文字の大きさを設定*/
+  text-align: center;	/*タブ内文字の横位置を設定*/
+  vertical-align: middle;/*タブ内文字の縦位置を設定*/
+  color: black;			/*タブ内文字の色を設定*/
+  display: block;		/*タブを表示する（無くてもおｋ）*/
+  float: left;			/*HTML内で記載した下の要素に対して自身を左に置く（下の要素を自身の右に表示（回り込み設定））する。*/
+  						/*本来であれば、下の要素が右に来た時に画面サイズを超えるようであれば適用されないが、今回は全てのタブの幅を％で指定しているのでおｋ*/
+  font-weight: nomal;	/*タブ内文字の太さを設定*/
+  transition: all 0.2s ease;
+}
+
+/*タブにマウスが置かれてる時のスタイル*/
+.tab_item:hover {	
+  background-color: #5ab4bd;
+  opacity: 0.5;	/*タブをちょっと透明にする*/
+  color: olive;		/*文字をオリーブ色にする*/
+  border-bottom: 3px solid #5ab4bd;/*ボーダーラインをオリーブ色にする*/
+}
+
+/*ラジオボタンを全て消す*/
+input[name="tab_item"] {
+  display: none;
+}
+
+/*タブ切り替えの中身（div）のスタイル*/
+.tab_content {
+  display: none;
+  padding: 40px 40px 0;
+  clear: both;
+  overflow: hidden;
+}
+
+
+/*選択されているタブのコンテンツのみを表示*/
+#all:checked ~ #all_content,
+#programming:checked ~ #programming_content,
+#design:checked ~ #design_content {
+  border: solid #5ab4bd;
+  display: block;
+}
+
+/*選択されているタブのスタイルを変える*/
+.tabs input:checked + .tab_item {
+  background-color: #5ab4bd;
+  font-size: 22px;
+  font-weight: bold;
+  border-bottom: 3px solid #5ab4bd;
+  color: #fff;
+}
+
+#h td::after{
+  content: '<br>（これはHTML本文には記載されない追加文字）' ;
+  display: block;
+
+}
